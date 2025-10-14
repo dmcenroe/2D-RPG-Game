@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=6 format=3 uid="uid://csg0du8q2mqkb"]
+
+[ext_resource type="PackedScene" uid="uid://6rhb02v2sy63" path="res://Particle Scenes/SnareCastingParticleEffect.tscn" id="1_113bs"]
+[ext_resource type="Script" uid="uid://7dh3cebu2di2" path="res://systems/abilities/Ability.gd" id="1_ae16e"]
+[ext_resource type="Script" uid="uid://di7vr3g4pskeo" path="res://systems/abilities/ability effects/AbilityEffect.gd" id="2_hl722"]
+[ext_resource type="Script" uid="uid://bfcew7n2ppi35" path="res://systems/abilities/ability effects/RootEffect.gd" id="3_hl722"]
+
+[sub_resource type="Resource" id="Resource_ix1ew"]
+script = ExtResource("3_hl722")
+metadata/_custom_type_script = "uid://bfcew7n2ppi35"
+
+[resource]
+script = ExtResource("1_ae16e")
+ability_name = "Root"
+ability_classes = 4
+cast_time = 3.0
+duration = 30.0
+mana_cost = 20
+root_break_chance = 0.1
+cast_effect = ExtResource("1_113bs")
+effects = Array[ExtResource("2_hl722")]([SubResource("Resource_ix1ew")])
+metadata/_custom_type_script = "uid://7dh3cebu2di2"

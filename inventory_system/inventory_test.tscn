@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://34din4w5hwax"]
+
+[ext_resource type="Script" uid="uid://ch6fu3ngdrcnm" path="res://inventory_system/scripts/inventory.gd" id="1_bqhm4"]
+[ext_resource type="Script" uid="uid://xialghg3ett7" path="res://inventory_system/scripts/inventory_test.gd" id="1_rescu"]
+[ext_resource type="Resource" uid="uid://cyyuc6fadccoe" path="res://items/rusty_sword.tres" id="2_hxy15"]
+[ext_resource type="Resource" uid="uid://w7njk7drjtu5" path="res://items/leather_tunic.tres" id="3_jx5e7"]
+[ext_resource type="Resource" uid="uid://b7coejspjr58o" path="res://items/mysterious_amulet.tres" id="4_dtlbf"]
+[ext_resource type="PackedScene" uid="uid://cs4336c5m7dk8" path="res://inventory_system/InventoryUI.tscn" id="6_dtlbf"]
+
+[node name="InventoryTest" type="Node"]
+script = ExtResource("1_rescu")
+iron_sword = ExtResource("2_hxy15")
+leather_helm = ExtResource("3_jx5e7")
+mysterious_amulet = ExtResource("4_dtlbf")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("1_bqhm4")
+metadata/_custom_type_script = "uid://ch6fu3ngdrcnm"
+
+[node name="InventoryUI" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("6_dtlbf")]
+inventory = NodePath("../Inventory")

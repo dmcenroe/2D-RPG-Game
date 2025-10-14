@@ -1,0 +1,21 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes"
+type="SpriteFrames"
+uid="uid://bc87k3evq1wn2"
+path="res://.godot/imported/Soldier.aseprite-983ae0404c410d4a279a30058e830dc8.res"
+
+[deps]
+
+source_file="res://sprites/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Aseprite file/Soldier.aseprite"
+dest_files=["res://.godot/imported/Soldier.aseprite-983ae0404c410d4a279a30058e830dc8.res"]
+
+[params]
+
+layer/exclude_layers_pattern=""
+layer/only_visible_layers=false
+sheet/sheet_type="packed"
+sheet/sheet_columns=6
+sheet/frame_padding=0
+sheet/scale=1
+animation/round_fps=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes"
+type="SpriteFrames"
+uid="uid://b3qprro5ysaks"
+path="res://.godot/imported/Orc.aseprite-77feb4d48bdf1fb44dbcd70778bd7143.res"
+
+[deps]
+
+source_file="res://sprites/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Aseprite file/Orc.aseprite"
+dest_files=["res://.godot/imported/Orc.aseprite-77feb4d48bdf1fb44dbcd70778bd7143.res"]
+
+[params]
+
+layer/exclude_layers_pattern=""
+layer/only_visible_layers=false
+sheet/sheet_type="packed"
+sheet/sheet_columns=12
+sheet/frame_padding=0
+sheet/scale=1
+animation/round_fps=true

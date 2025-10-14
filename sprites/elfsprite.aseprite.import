@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://jes8ba1htfte"
+path="res://.godot/imported/elfsprite.aseprite-c58cd1fb4eafcaec2f05c995a8c86abc.res"
+
+[deps]
+
+source_file="res://sprites/elfsprite.aseprite"
+dest_files=["res://.godot/imported/elfsprite.aseprite-c58cd1fb4eafcaec2f05c995a8c86abc.res"]
+
+[params]
+

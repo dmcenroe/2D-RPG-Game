@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://xcjigc3er8tf"
+path="res://.godot/imported/spidersprite.aseprite-6eab5e21c5c5f4d0185912f29fd51fff.res"
+
+[deps]
+
+source_file="res://sprites/spidersprite.aseprite"
+dest_files=["res://.godot/imported/spidersprite.aseprite-6eab5e21c5c5f4d0185912f29fd51fff.res"]
+
+[params]
+

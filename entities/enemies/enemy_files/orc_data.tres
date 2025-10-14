@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://d23c4dqxisnoj"]
+
+[ext_resource type="Script" uid="uid://b2bnat1h8ddxw" path="res://entities/enemies/enemy_data.gd" id="1_wyv1w"]
+[ext_resource type="SpriteFrames" uid="uid://b3qprro5ysaks" path="res://sprites/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Aseprite file/Orc.aseprite" id="2_thjdf"]
+
+[resource]
+script = ExtResource("1_wyv1w")
+enemy_name = "an orc"
+sprite_frames = ExtResource("2_thjdf")
+metadata/_custom_type_script = "uid://b2bnat1h8ddxw"

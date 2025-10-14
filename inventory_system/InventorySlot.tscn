@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0w4sfsa7akxu"]
+
+[ext_resource type="Script" uid="uid://57vllramqbg8" path="res://inventory_system/scripts/inventory_slot.gd" id="1_lfsb5"]
+
+[node name="InventorySlot" type="PanelContainer"]
+custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1_lfsb5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="QuantityLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ItemIcon" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
