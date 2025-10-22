@@ -8,6 +8,7 @@ signal player_health_changed(current: int, maximum: int)
 signal player_mana_changed(current: int, maximum: int)
 signal damage_dealt(target: Node, amount: int, is_critical: bool)
 signal damage_taken(amount: int, attacker: Node)
+signal enemy_died(enemy: Enemy)
 
 # Status Events
 signal buff_applied(buff_name: String, duration: float, icon: Texture)
@@ -27,7 +28,6 @@ signal quest_updated(quest_name: String, progress: String)
 signal quest_completed(quest_name: String)
 
 # XP/Level Events
-signal experience_gained(amount: int)
 signal level_up(new_level: int)
 
 # General

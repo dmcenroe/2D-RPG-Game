@@ -7,10 +7,10 @@ var is_attacking := false
 
 func _ready() -> void:
 	#animated_sprite.sprite_frames.set_animation_loop("Idle", true)
-	#animated_sprite.sprite_frames.set_animation_loop("Walk", true)
-	animated_sprite.sprite_frames.set_animation_loop("Attack01", false)  # Don't loop attack
+	animated_sprite.sprite_frames = enemy.get_sprite_frames()
+	animated_sprite.sprite_frames.set_animation_loop("attack01", false)  # Don't loop attack
 	animated_sprite.animation_finished.connect(_on_animation_finished)
-	animated_sprite.play("Idle")
+	animated_sprite.play("idle")
 
 func _process(delta: float) -> void:
 	if not is_attacking:
@@ -24,9 +24,9 @@ func update_animation() -> void:
 		animated_sprite.flip_h = false  # Face right
 		
 	if enemy.velocity.length() > 0:
-		animated_sprite.play("Walk")
+		animated_sprite.play("walk")
 	else:
-		animated_sprite.play("Idle")
+		animated_sprite.play("idle")
 	
 func play_attack(current_target:Node) -> void:
 	if enemy.global_position.x < current_target.global_position.x:
@@ -36,9 +36,9 @@ func play_attack(current_target:Node) -> void:
 		# Player is on right, face left
 		animated_sprite.flip_h = true
 	is_attacking = true
-	animated_sprite.play("Attack01")
+	animated_sprite.play("attack01")
 
 func _on_animation_finished() -> void:
-	if animated_sprite.animation == "Attack01":
+	if animated_sprite.animation == "attack01":
 		is_attacking = false
 	

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b5687grgx0gox"]
+
+[ext_resource type="Script" uid="uid://ocl7eeadv1w1" path="res://systems/Equipment/item.gd" id="1_d7qje"]
+[ext_resource type="Texture2D" uid="uid://bwn1yx5eo2eav" path="res://sprites/icon.svg" id="1_w15j4"]
+
+[resource]
+script = ExtResource("1_d7qje")
+item_name = "Rusty Dagger"
+icon = ExtResource("1_w15j4")
+equipment_slot = 7
+metadata/_custom_type_script = "uid://ocl7eeadv1w1"

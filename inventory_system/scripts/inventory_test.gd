@@ -4,8 +4,8 @@ extends Node
 @onready var inventory = $Inventory
 
 # Load your item resources
-@export var iron_sword: Item
-@export var leather_helm: Item
+@export var rusty_dagger: Item
+@export var orc_ear: Item
 @export var mysterious_amulet: Item
 
 func _ready() -> void:
@@ -17,8 +17,8 @@ func _ready() -> void:
 	
 	# Test adding items
 	print("\n=== Testing Inventory ===")
-	inventory.add_item(iron_sword, 1)
-	inventory.add_item(leather_helm, 1)
+	inventory.add_item(rusty_dagger, 1)
+	inventory.add_item(orc_ear, 2)
 	inventory.add_item(mysterious_amulet, 1)
 	
 	# Try adding a duplicate unique item (should fail)

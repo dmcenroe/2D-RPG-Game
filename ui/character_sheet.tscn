@@ -1,0 +1,368 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvsrae1vhesws"]
+
+[ext_resource type="Script" uid="uid://qa0oiw6c6i6y" path="res://ui/character_sheet.gd" id="1_tgr6d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgr6d"]
+
+[node name="CharacterSheet" type="Control"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tgr6d")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tgr6d")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="CharacterInfo" type="VBoxContainer" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/VBox/CharacterInfo"]
+layout_mode = 2
+text = "\"Character Name\""
+
+[node name="ClassLabel" type="Label" parent="Panel/MarginContainer/VBox/CharacterInfo"]
+layout_mode = 2
+text = "\"Class: Warrior\""
+
+[node name="RaceLabel" type="Label" parent="Panel/MarginContainer/VBox/CharacterInfo"]
+layout_mode = 2
+text = "\"Race: Human\""
+
+[node name="LevelLabel" type="Label" parent="Panel/MarginContainer/VBox/CharacterInfo"]
+layout_mode = 2
+text = "\"Level: 1\""
+
+[node name="StatsPanel" type="PanelContainer" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBox/StatsPanel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Stats"
+
+[node name="StatsGrid" type="GridContainer" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="Strength" type="Label" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="StregnthValue" type="RichTextLabel" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+
+[node name="Stamina" type="Label" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+text = "Stamina:"
+
+[node name="StaminaValue" type="RichTextLabel" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+
+[node name="Dexterity" type="Label" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+text = "Dexterity:"
+
+[node name="DexterityValue" type="RichTextLabel" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+
+[node name="Agility" type="Label" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="AgilityValue" type="RichTextLabel" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+
+[node name="Intelligence" type="Label" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+text = "Intelligence:"
+
+[node name="IntelligenceValue" type="RichTextLabel" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+
+[node name="Wisdom" type="Label" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+text = "Wisdom:"
+
+[node name="WisdomValue" type="RichTextLabel" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+
+[node name="Charisma" type="Label" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+text = "Charisma:"
+
+[node name="CharismaValue" type="RichTextLabel" parent="Panel/MarginContainer/VBox/StatsPanel/MarginContainer/VBox/StatsGrid"]
+layout_mode = 2
+
+[node name="EquipmentPanel" type="PanelContainer" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Equipment"
+
+[node name="EquipmentGrid" type="GridContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="HeadSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 1
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/HeadSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/HeadSlot/VBox"]
+layout_mode = 2
+text = "Head
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/HeadSlot/VBox"]
+layout_mode = 2
+
+[node name="NeckSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+layout_mode = 2
+metadata/equipment_slot = 9
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/NeckSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/NeckSlot/VBox"]
+layout_mode = 2
+text = "Neck
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/NeckSlot/VBox"]
+layout_mode = 2
+
+[node name="ChestSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/ChestSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/ChestSlot/VBox"]
+layout_mode = 2
+text = "Chest
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/ChestSlot/VBox"]
+layout_mode = 2
+
+[node name="BackSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 14
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/BackSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/BackSlot/VBox"]
+layout_mode = 2
+text = "Back"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/BackSlot/VBox"]
+layout_mode = 2
+
+[node name="ArmsSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 3
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/ArmsSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/ArmsSlot/VBox"]
+layout_mode = 2
+text = "Arms
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/ArmsSlot/VBox"]
+layout_mode = 2
+
+[node name="WaistSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 10
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/WaistSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/WaistSlot/VBox"]
+layout_mode = 2
+text = "Waist"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/WaistSlot/VBox"]
+layout_mode = 2
+
+[node name="HandsSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 4
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/HandsSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/HandsSlot/VBox"]
+layout_mode = 2
+text = "Hands
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/HandsSlot/VBox"]
+layout_mode = 2
+
+[node name="WristSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 11
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/WristSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/WristSlot/VBox"]
+layout_mode = 2
+text = "Wrist
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/WristSlot/VBox"]
+layout_mode = 2
+
+[node name="LegsSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 5
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/LegsSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/LegsSlot/VBox"]
+layout_mode = 2
+text = "Legs"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/LegsSlot/VBox"]
+layout_mode = 2
+
+[node name="FingerSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 12
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/FingerSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/FingerSlot/VBox"]
+layout_mode = 2
+text = "Fingers
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/FingerSlot/VBox"]
+layout_mode = 2
+
+[node name="FeetSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 6
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/FeetSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/FeetSlot/VBox"]
+layout_mode = 2
+text = "Feet
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/FeetSlot/VBox"]
+layout_mode = 2
+
+[node name="EarsSlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 13
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/EarsSlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/EarsSlot/VBox"]
+layout_mode = 2
+text = "Ears
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/EarsSlot/VBox"]
+layout_mode = 2
+
+[node name="PrimarySlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 7
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/PrimarySlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/PrimarySlot/VBox"]
+layout_mode = 2
+text = "Primary"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/PrimarySlot/VBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SecondarySlot" type="PanelContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/equipment_slot = 8
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/SecondarySlot"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/SecondarySlot/VBox"]
+layout_mode = 2
+text = "Secondary
+"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBox/EquipmentPanel/MarginContainer/VBox/EquipmentGrid/SecondarySlot/VBox"]
+layout_mode = 2

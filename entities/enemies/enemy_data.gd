@@ -8,8 +8,10 @@ class_name EnemyData
 @export var sprite_frames: SpriteFrames  # The AnimatedSprite animation set
 @export var default_animation: String = "idle"
 @export var has_proximity_aggro: bool = true
-@export var loot_table: Array[LootDrop] = []  # We can define this later
+@export var level: int = 1
+
+# The complete loot table with all slots
+@export var loot_table: LootTable
 
 # Add any other stats you need
 @export var move_speed: float = 200
-@export var experience_reward: int = 10

@@ -1,16 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b7coejspjr58o"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://vclp5l1fyxwy"]
 
-[ext_resource type="Texture2D" uid="uid://bwn1yx5eo2eav" path="res://icon.svg" id="1_hwpnn"]
-[ext_resource type="Script" uid="uid://ocl7eeadv1w1" path="res://inventory_system/scripts/item.gd" id="1_xbr37"]
+[ext_resource type="Texture2D" uid="uid://bwn1yx5eo2eav" path="res://sprites/icon.svg" id="1_hwpnn"]
+[ext_resource type="Script" uid="uid://ocl7eeadv1w1" path="res://systems/Equipment/item.gd" id="1_xbr37"]
 
 [resource]
 script = ExtResource("1_xbr37")
 item_name = "Mysterious Amulet"
-description = ""
 icon = ExtResource("1_hwpnn")
-max_stack_size = 1
-item_type = 2
-equipment_slot = 0
-is_two_handed = false
-is_unique = true
+item_type = 1
 metadata/_custom_type_script = "uid://ocl7eeadv1w1"

@@ -1,22 +1,21 @@
-[gd_scene load_steps=25 format=4 uid="uid://brkfvccx05tfb"]
+[gd_scene load_steps=24 format=4 uid="uid://brkfvccx05tfb"]
 
 [ext_resource type="PackedScene" uid="uid://cba5nievu3d7o" path="res://entities/player/player.tscn" id="1_66jkr"]
 [ext_resource type="Script" uid="uid://q1ggcsp6frvh" path="res://global scripts/world.gd" id="1_h84go"]
-[ext_resource type="Resource" uid="uid://b7coejspjr58o" path="res://items/mysterious_amulet.tres" id="2_dww4n"]
-[ext_resource type="Resource" uid="uid://cyyuc6fadccoe" path="res://items/rusty_sword.tres" id="2_f625a"]
-[ext_resource type="Resource" uid="uid://w7njk7drjtu5" path="res://items/leather_tunic.tres" id="3_18kvi"]
 [ext_resource type="Texture2D" uid="uid://cshbi1ltgtqpb" path="res://sprites/targetbar.png" id="3_u3g61"]
 [ext_resource type="Script" uid="uid://gjoin247cmjk" path="res://ui/target_label.gd" id="4_h84go"]
 [ext_resource type="Texture2D" uid="uid://cpo8jh23uyxse" path="res://sprites/grasslands/Grasslands - Free/tileset-grassland-grass.png" id="4_oqwdq"]
 [ext_resource type="Texture2D" uid="uid://c7wpqc3jki8rq" path="res://sprites/grasslands/Grasslands - Free/tileset-grassland-paths.png" id="5_1v6x6"]
 [ext_resource type="Script" uid="uid://diknqn0qr58vn" path="res://ui/target_health_bar.gd" id="5_61ghn"]
 [ext_resource type="Texture2D" uid="uid://mfb5fjdtpdx6" path="res://sprites/grasslands/Grasslands - Free/tileset-grassland-grass-more grass.png" id="6_1v6x6"]
+[ext_resource type="Script" uid="uid://r6npmub2nkgn" path="res://systems/Equipment/equipment_manager.gd" id="6_dww4n"]
 [ext_resource type="Script" uid="uid://dd1a138va6c1f" path="res://ui/player_health_bar.gd" id="6_oqwdq"]
 [ext_resource type="Script" uid="uid://d22unqpwmvixb" path="res://ui/chat_box.gd" id="7_1v6x6"]
 [ext_resource type="Script" uid="uid://diwpwl3bvmxkn" path="res://ui/cast_bar.gd" id="8_kdonq"]
 [ext_resource type="Script" uid="uid://miaktf06rtn8" path="res://ui/player_mana_bar.gd" id="10_oqwdq"]
 [ext_resource type="Script" uid="uid://dpqyxvdv71if" path="res://Spawn Logic/spawn_logic.gd" id="12_61ghn"]
 [ext_resource type="PackedScene" uid="uid://cs4336c5m7dk8" path="res://inventory_system/InventoryUI.tscn" id="13_1v6x6"]
+[ext_resource type="PackedScene" uid="uid://dvsrae1vhesws" path="res://ui/character_sheet.tscn" id="15_kdonq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdonq"]
 texture = ExtResource("4_oqwdq")
@@ -142,9 +141,6 @@ corner_detail = 1
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_h84go")
-rusty_sword = ExtResource("2_f625a")
-leather_tunic = ExtResource("3_18kvi")
-mysterious_amulet = ExtResource("2_dww4n")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 modulate = Color(0.5409905, 0.5409905, 0.5409905, 1)
@@ -156,6 +152,9 @@ tile_set = SubResource("TileSet_h84go")
 [node name="Player" parent="." instance=ExtResource("1_66jkr")]
 position = Vector2(491, 334)
 speed = 150.0
+
+[node name="EquipmentManager" type="Node" parent="Player"]
+script = ExtResource("6_dww4n")
 
 [node name="UI" type="Node2D" parent="."]
 
@@ -263,6 +262,18 @@ vertical_alignment = 1
 
 [node name="InventoryUI" parent="UI/CanvasLayer" instance=ExtResource("13_1v6x6")]
 anchors_preset = 3
+
+[node name="CharacterSheet" parent="UI/CanvasLayer" instance=ExtResource("15_kdonq")]
+offset_left = 75.0
+offset_top = 84.0
+offset_right = 875.0
+offset_bottom = 684.0
+
+[node name="XPBar" type="ProgressBar" parent="UI/CanvasLayer"]
+offset_left = 668.0
+offset_top = 1029.0
+offset_right = 1321.0
+offset_bottom = 1056.0
 
 [node name="EnemySpawnPoints" type="Node" parent="."]
 

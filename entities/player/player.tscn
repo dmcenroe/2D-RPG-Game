@@ -1,10 +1,11 @@
-[gd_scene load_steps=54 format=3 uid="uid://cba5nievu3d7o"]
+[gd_scene load_steps=56 format=3 uid="uid://cba5nievu3d7o"]
 
 [ext_resource type="Script" uid="uid://6lftxkwbendt" path="res://entities/player/player.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://bow0ii31l846i" path="res://entities/player/camera_2d.gd" id="2_7thud"]
 [ext_resource type="Script" uid="uid://ch6fu3ngdrcnm" path="res://inventory_system/scripts/inventory.gd" id="2_j3ovn"]
 [ext_resource type="Texture2D" path="res://.godot/imported/Soldier.aseprite-983ae0404c410d4a279a30058e830dc8.Soldier.texture.res" id="2_tuyoq"]
 [ext_resource type="Script" uid="uid://cs8w2uatedg4b" path="res://entities/player/hitbox_area.gd" id="3_dqkch"]
+[ext_resource type="Resource" uid="uid://b5687grgx0gox" path="res://items/rusty_dagger.tres" id="3_gx6sm"]
 [ext_resource type="Script" uid="uid://bpb26s26w4n68" path="res://entities/player/player_combat_controller.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://7cunadia1g24" path="res://ui/combat_text.gd" id="5_qlg0r"]
 [ext_resource type="Script" uid="uid://daody71oochqm" path="res://entities/player/player_animation_controller.gd" id="6_tuyoq"]
@@ -13,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://crovpqm3hfbif" path="res://systems/abilities/ability files/snare.tres" id="9_y4r1p"]
 [ext_resource type="Resource" uid="uid://csg0du8q2mqkb" path="res://systems/abilities/ability files/root.tres" id="10_wvtmh"]
 [ext_resource type="Resource" uid="uid://cbiir5v20y1i" path="res://systems/abilities/ability files/fireseed.tres" id="12_a1qjk"]
+[ext_resource type="PackedScene" uid="uid://blnwgmhn18l8n" path="res://systems/Experience/XP_Bar.tscn" id="14_afbqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_747qh"]
 atlas = ExtResource("2_tuyoq")
@@ -457,6 +459,7 @@ script = ExtResource("1_g2els")
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("2_j3ovn")
+rusty_dagger = ExtResource("3_gx6sm")
 metadata/_custom_type_script = "uid://ch6fu3ngdrcnm"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -531,3 +534,9 @@ script = ExtResource("7_fjrip")
 [node name="AbilityController" type="Node" parent="."]
 script = ExtResource("8_ur7pv")
 abilities = Array[Resource]([ExtResource("9_y4r1p"), ExtResource("10_wvtmh"), ExtResource("12_a1qjk")])
+
+[node name="ExperienceManager" parent="." instance=ExtResource("14_afbqv")]
+offset_left = -304.0
+offset_top = 486.0
+offset_right = -304.0
+offset_bottom = 486.0

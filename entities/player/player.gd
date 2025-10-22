@@ -1,5 +1,11 @@
 extends CharacterBody2D
 
+# === CHARACTER INFO ===
+@export_group("Character Info")
+@export var character_name: String = "Adventurer"
+@export_enum("Warrior", "Wizard", "Druid", "Shaman", "Ranger", "Rogue") var character_class: String = "Warrior"
+@export_enum("Human", "Elf", "Dwarf", "Halfling", "Gnome", "Barbarian") var character_race: String = "Human"
+@export var character_level: int = 1
 
 # Resources
 @export var base_health: int = 20
@@ -43,6 +49,7 @@ var current_mana: int
 
 @onready var combat_controller = $PlayerCombatController
 @onready var ability_controller = $AbilityController
+@onready var experience_manager = $ExperienceManager
 
 var bonus_spell_dmg: float = 0.0
 var bonus_spell_crit: float = 0.0

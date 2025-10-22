@@ -5,6 +5,7 @@ class_name Inventory
 signal inventory_changed
 signal item_added(item: Item, quantity: int)
 signal item_removed(item: Item, quantity: int)
+@export var rusty_dagger: Item
 
 @export var max_slots: int = 12
 
@@ -12,6 +13,7 @@ var items: Array = []
 
 func _ready() -> void:
 	items.resize(max_slots)
+	add_item(rusty_dagger, 1)
 
 func add_item(item: Item, quantity: int = 1) -> bool:
 	if item == null:
@@ -91,3 +93,67 @@ func swap_slots(from_index: int, to_index: int) -> void:
 	items[to_index] = temp
 	
 	inventory_changed.emit()
+
+
+func add_item_to_slot(slot_index: int, item: Item, quantity: int) -> bool:
+	if slot_index < 0 or slot_index >= max_slots:
+		return false
+	
+	if item == null:
+		return false
+	
+	# If slot is empty, add item there
+	if items[slot_index] == null:
+		items[slot_index] = {"item": item, "quantity": quantity}
+		inventory_changed.emit()
+		item_added.emit(item, quantity)
+		return true
+	else:
+		# Slot occupied - if same item and stackable, try to add to stack
+		var existing = items[slot_index]
+		if existing["item"] == item and item.max_stack_size > 1:
+			var space_left = item.max_stack_size - existing["quantity"]
+			var amount_to_add = min(quantity, space_left)
+			if amount_to_add > 0:
+				existing["quantity"] += amount_to_add
+				inventory_changed.emit()
+				item_added.emit(item, amount_to_add)
+				return true
+		
+		# Can't add to this slot, use normal add_item
+		return add_item(item, quantity)
+
+func set_item_at_slot(slot_index: int, item: Item, quantity: int) -> void:
+	if slot_index < 0 or slot_index >= max_slots:
+		return
+	
+	var old_item = items[slot_index]
+	
+	if item == null or quantity <= 0:
+		# Clear the slot
+		items[slot_index] = null
+	else:
+		items[slot_index] = {"item": item, "quantity": quantity}
+	
+	inventory_changed.emit()
+	
+	if old_item:
+		item_removed.emit(old_item["item"], old_item["quantity"])
+	if item:
+		item_added.emit(item, quantity)
+
+func remove_item_at_slot(slot_index: int) -> bool:
+	if slot_index < 0 or slot_index >= items.size():
+		return false
+	
+	if items[slot_index] == null:
+		return false
+	
+	var removed_item = items[slot_index]
+	items[slot_index] = null
+	inventory_changed.emit()
+	item_removed.emit(removed_item["item"], removed_item["quantity"])
+	return true
+
+func clear_slot(slot_index: int) -> void:
+	set_item_at_slot(slot_index, null, 0)

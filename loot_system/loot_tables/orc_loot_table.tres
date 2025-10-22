@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=15 format=3 uid="uid://p8l4xcpm0uc8"]
+
+[ext_resource type="Script" uid="uid://di7esb8l6vw30" path="res://loot_system/loot_slot.gd" id="1_uyf81"]
+[ext_resource type="Script" uid="uid://csvm777k5bwyx" path="res://loot_system/slot_entry.gd" id="2_7xr32"]
+[ext_resource type="Script" uid="uid://cbdnkyydlxol8" path="res://loot_system/loot_table.gd" id="2_w272g"]
+[ext_resource type="Resource" uid="uid://b5687grgx0gox" path="res://items/rusty_dagger.tres" id="3_sb6j7"]
+[ext_resource type="Resource" uid="uid://jl5ilf1d7jgj" path="res://items/orc_ear.tres" id="4_spkqe"]
+[ext_resource type="Resource" uid="uid://vclp5l1fyxwy" path="res://items/mysterious_amulet.tres" id="5_d2isw"]
+
+[sub_resource type="Resource" id="Resource_w272g"]
+script = ExtResource("2_7xr32")
+item = ExtResource("3_sb6j7")
+drop_chance = 25.0
+metadata/_custom_type_script = "uid://csvm777k5bwyx"
+
+[sub_resource type="Resource" id="Resource_odvtu"]
+script = ExtResource("2_7xr32")
+drop_chance = 75.0
+metadata/_custom_type_script = "uid://csvm777k5bwyx"
+
+[sub_resource type="Resource" id="Resource_7xr32"]
+script = ExtResource("1_uyf81")
+entries = Array[ExtResource("2_7xr32")]([SubResource("Resource_w272g"), SubResource("Resource_odvtu")])
+metadata/_custom_type_script = "uid://di7esb8l6vw30"
+
+[sub_resource type="Resource" id="Resource_vqjy0"]
+script = ExtResource("2_7xr32")
+item = ExtResource("4_spkqe")
+drop_chance = 100.0
+max_quantity = 2
+metadata/_custom_type_script = "uid://csvm777k5bwyx"
+
+[sub_resource type="Resource" id="Resource_llrao"]
+script = ExtResource("1_uyf81")
+entries = Array[ExtResource("2_7xr32")]([SubResource("Resource_vqjy0")])
+metadata/_custom_type_script = "uid://di7esb8l6vw30"
+
+[sub_resource type="Resource" id="Resource_silbc"]
+script = ExtResource("2_7xr32")
+drop_chance = 90.0
+metadata/_custom_type_script = "uid://csvm777k5bwyx"
+
+[sub_resource type="Resource" id="Resource_gwxo1"]
+script = ExtResource("2_7xr32")
+item = ExtResource("5_d2isw")
+drop_chance = 10.0
+metadata/_custom_type_script = "uid://csvm777k5bwyx"
+
+[sub_resource type="Resource" id="Resource_o1jn4"]
+script = ExtResource("1_uyf81")
+entries = Array[ExtResource("2_7xr32")]([SubResource("Resource_silbc"), SubResource("Resource_gwxo1")])
+metadata/_custom_type_script = "uid://di7esb8l6vw30"
+
+[resource]
+script = ExtResource("2_w272g")
+loot_slots = Array[ExtResource("1_uyf81")]([SubResource("Resource_7xr32"), SubResource("Resource_llrao"), SubResource("Resource_o1jn4")])
+metadata/_custom_type_script = "uid://cbdnkyydlxol8"
